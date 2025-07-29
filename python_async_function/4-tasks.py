@@ -6,7 +6,7 @@ This module provides functions for executing multiple asynchronous coroutines
 concurrently and collecting their results in completion order.
 """
 import asyncio
-from task import task_wait_random
+from 3-tasks import task_wait_random
 
 
 async def task_wait_n(n, max_delay):
