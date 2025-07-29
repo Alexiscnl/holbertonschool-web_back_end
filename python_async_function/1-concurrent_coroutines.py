@@ -6,10 +6,9 @@ This module provides functions for executing multiple asynchronous coroutines
 concurrently and collecting their results in completion order.
 """
 import asyncio
-from basic_async_syntax import wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-# ⚠️ Annotations manquantes
 async def wait_n(n: int, max_delay: int) -> list[float]:
     """
     Execute multiple wait_random coroutines concurrently.
