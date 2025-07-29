@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-Module for concurrent coroutines execution with type annotations.
+Module for concurrent coroutines execution.
 
 This module provides functions for executing multiple asynchronous coroutines
 concurrently and collecting their results in completion order.
 """
 import asyncio
-from 0-basic_async_syntax import wait_random
+from basic_async_syntax import wait_random
 
 
-async def wait_n(n, max_delay):
+# ⚠️ Annotations manquantes
+async def wait_n(n: int, max_delay: int) -> list[float]:
     """
     Execute multiple wait_random coroutines concurrently.
 
     Spawns n instances of wait_random coroutine with the specified max_delay
     and returns a list of all delays in ascending order without using sort().
-    The ordering is achieved naturally by collecting results as they complete.
 
     Args:
         n: Number of wait_random coroutines to spawn
@@ -23,10 +23,6 @@ async def wait_n(n, max_delay):
 
     Returns:
         List of float values representing delays in ascending order
-
-    Example:
-        >>> asyncio.run(wait_n(5, 5))
-        [0.969, 1.026, 1.799, 3.641, 4.500]
     """
     tasks = [wait_random(max_delay) for _ in range(n)]
     results = []
