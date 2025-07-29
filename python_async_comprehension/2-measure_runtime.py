@@ -5,6 +5,7 @@ Module for measuring runtime of parallel async comprehensions.
 This module provides functions to measure execution time when running
 multiple async comprehensions in parallel using asyncio.gather.
 """
+
 import time
 import asyncio
 
