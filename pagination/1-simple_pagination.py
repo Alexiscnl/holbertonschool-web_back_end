@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Simple pagination implementation for paginating a database of popular baby names.
+Simple pagination implementation for paginating a database of popular baby
+names.
 """
 
 import csv
@@ -69,8 +70,8 @@ def index_range(page, page_size):
 
     Returns:
         tuple: A tuple containing (start_index, end_index) corresponding to
-               the range of indexes to return in a list for the given pagination
-               parameters.
+               the range of indexes to return in a list for the given
+               pagination parameters.
     """
     start = (page - 1) * page_size
     end = page * page_size

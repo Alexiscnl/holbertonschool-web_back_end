@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Hypermedia pagination implementation for paginating a database of popular baby names.
+Hypermedia pagination implementation for paginating a database of popular baby
+names.
 """
 
 import csv
@@ -67,8 +68,10 @@ class Server:
                 - page_size (int): The length of the returned dataset page
                 - page (int): The current page number
                 - data (List[List]): The dataset page
-                - next_page (int or None): Number of the next page, None if no next page
-                - prev_page (int or None): Number of the previous page, None if no previous page
+                - next_page (int or None): Number of the next page, None if
+                no next page
+                - prev_page (int or None): Number of the previous page,
+                None if no previous page
                 - total_pages (int): The total number of pages in the dataset
         """
         data = self.get_page(page, page_size)
@@ -101,8 +104,8 @@ def index_range(page, page_size):
 
     Returns:
         tuple: A tuple containing (start_index, end_index) corresponding to
-               the range of indexes to return in a list for the given pagination
-               parameters.
+               the range of indexes to return in a list for the given
+               pagination parameters.
     """
     start = (page - 1) * page_size
     end = page * page_size
