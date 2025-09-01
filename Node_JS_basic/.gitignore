@@ -2,3 +2,5 @@ package.json
 database.csv
 babel.config.js
 .eslintrc.js
+node_modules
+package-lock.json
