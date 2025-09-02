@@ -40,10 +40,9 @@ app.get('/', (req, res) => {
   res.end('Hello Holberton School!');
 });
 app.get('/students', (req, res) => {
-  let responseText = 'This is the list of our students\n';
   countStudents(database)
     .then((studentsText) => {
-      responseText += studentsText;
+      const responseText = `This is the list of our students\n${studentsText}`;
       res.end(responseText);
     })
     .catch((error) => {
