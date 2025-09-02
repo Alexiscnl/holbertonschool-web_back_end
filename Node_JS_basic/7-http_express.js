@@ -37,7 +37,7 @@ function countStudents(path) {
 }
 
 app.get('/', (req, res) => {
-  res.end('Hello Holberton School!');
+  res.end('Hello Holberton School!\n');
 });
 app.get('/students', (req, res) => {
   countStudents(database)
