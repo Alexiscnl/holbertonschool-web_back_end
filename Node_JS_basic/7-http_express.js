@@ -38,7 +38,7 @@ function countStudents(path) {
 
 app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Holberton School!');
+  res.send('Hello Holberton School!');
 });
 app.get('/students', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
