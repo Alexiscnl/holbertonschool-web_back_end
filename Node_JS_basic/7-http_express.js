@@ -37,17 +37,21 @@ function countStudents(path) {
 }
 
 app.get('/', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
-  res.send('Hello Holberton School!');
+  res.set('Content-Type', 'text/plain');
+  res.end('Hello Holberton School!');
 });
 app.get('/students', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
+  res.set('Content-Type', 'text/plain');
+  if (!database) {
+    res.end('This is the list of our students\nCannot load the database');
+    return;
+  }
   countStudents(database)
     .then((studentsText) => {
-      res.send(`This is the list of our students\n${studentsText}`);
+      res.end(`This is the list of our students\n${studentsText}`);
     })
     .catch((error) => {
-      res.send(`This is the list of our students\nError: ${error.message}`);
+      res.end(`This is the list of our students\n${error.message}`);
     });
 });
 app.listen(port, () => {
